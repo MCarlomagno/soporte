@@ -1,0 +1,36 @@
+#funcion recursiva que resuelva un laberinto, se ingresa una matriz de booleanos con un punto de partida y punto de salida
+
+p=(0,0)
+f=(3,3)
+
+matriz=[[True, False, False, False], [True, True, False, False], [True, False, False, False], [True, True, True, True]]
+
+for i in range (4):
+    print(matriz[i])
+
+def laberinto(matriz, p, f):
+    if p == f:
+        print("Ha llegado al final del labeinto, en el punto:", p)
+        return True
+    else:
+        print(p)
+        if p[1]+1 < len(matriz): #valida que no este en una pared de la derecha
+            if matriz[p[0]][p[1]+1] == True: #intenta ir a la derecha
+                print("Nueva posicion", (p[0], p[1]+1))
+                return laberinto(matriz, (p[0], p[1]+1), f)
+            else:
+                if p[0]+1 < len(matriz): #valida que no este en una pared de abajo
+                    if matriz[p[0]+1][p[1]] == True: #intenta ir abajo
+                        return laberinto(matriz, (p[0]+1, p[1]), f)
+                    else:
+                        matriz[p[0]][p[1]]=False #pone la celda actual en false para que en la proxima llamda no vuelva al mismo lugar
+                        return laberinto(matriz, (p[0], p[1]-1), f) #va a la izquierda
+        else:
+            if matriz[p[0]+1][p[1]] == True:
+                return laberinto(matriz, (p[0]+1, p[1]), f)
+            else:
+                return laberinto(matriz, (p[0], p[1]-1), f)
+
+
+laberinto(matriz, p, f)
+
