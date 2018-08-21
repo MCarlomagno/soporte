@@ -52,7 +52,23 @@ class Aplicacion(ttk.Frame):
         return True
 
     def agregar(self):
-        pass
+        self.ventanaAgregar = Toplevel()
+        self.nombre = StringVar()
+        self.dni = StringVar()
+        self.apellido = StringVar()
+
+        entradanombre = Entry(self.ventanaAgregar, width=20, textvariable=self.nombre)
+        entradaapellido = Entry(self.ventanaAgregar, width=20, textvariable=self.apellido)
+        entradadni = Entry(self.ventanaAgregar, width=20, textvariable=self.dni)
+
+        botoncrear = Button(self.ventanaAgregar, text="Agregar",command=self.crear)
+        botoncancelar = Button(self.ventanaAgregar, text="Cancelar", command=self.cancelar)
+
+        entradanombre.pack()
+        entradaapellido.pack()
+        entradadni.pack()
+        botoncrear.pack()
+        botoncancelar.pack()
         #ciudad = self.treeview.insert("", tk.END, text=self.campo1.get())
         #self.treeview.insert(ciudad, tk.END, text=self.campo2.get())
 
@@ -62,12 +78,38 @@ class Aplicacion(ttk.Frame):
         #self.treeview.delete(item)
 
     def editar(self):
+        self.ventanaEditar = Toplevel()
+        self.nombre = StringVar()
+        self.dni = StringVar()
+        self.apellido = StringVar()
+
+        entradanombre = Entry(self.ventanaEditar, width=20, textvariable=self.nombre)
+        entradaapellido = Entry(self.ventanaEditar, width=20, textvariable=self.apellido)
+        entradadni = Entry(self.ventanaEditar, width=20, textvariable=self.dni)
+
+        botonmodificar = Button(self.ventanaEditar, text="Modificar",command=self.modificar)
+        botoncancelar = Button(self.ventanaEditar, text="Cancelar", command=self.cancelar)
+
+        entradanombre.pack()
+        entradaapellido.pack()
+        entradadni.pack()
+        botonmodificar.pack()
+        botoncancelar.pack()
+
         pass
         #item = self.treeview.selection()[0]
        # self.treeview.item(item, text=self.campo1.get())
         #hijo = self.treeview.get_children(item)
         #self.treeview.item(hijo, text=self.campo2.get())
 
+    def crear(self):
+        pass
+
+    def cancelar(self):
+        pass
+
+    def modificar(self):
+        pass
 
 principal = tk.Tk()
 app = Aplicacion(principal)
