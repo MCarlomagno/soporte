@@ -27,17 +27,8 @@ class Aplicacion(ttk.Frame):
         b3 = Button(root, text="Modificar", command = self.editar)
         entrada1 = StringVar()
         entrada1.set("")
-        #self.campo1 = Entry(root, textvariable = entrada1)
         entrada2 = StringVar()
         entrada2.set("")
-        #self.campo2 = Entry(root, textvariable = entrada2)
-
-        #etiq1 = Label(root, text="ingresar ciudad")
-        #etiq1.pack()
-        #self.campo1.pack()
-        #etiq2 = Label(root, text="ingresar codigo postal")
-        #etiq2.pack()
-        #self.campo2.pack()
         b1.pack()
         b2.pack()
         b3.pack()
@@ -69,13 +60,9 @@ class Aplicacion(ttk.Frame):
         entradadni.pack()
         botoncrear.pack()
         botoncancelar.pack()
-        #ciudad = self.treeview.insert("", tk.END, text=self.campo1.get())
-        #self.treeview.insert(ciudad, tk.END, text=self.campo2.get())
 
     def borrar(self):
         pass
-        #item = self.treeview.selection()[0]
-        #self.treeview.delete(item)
 
     def editar(self):
         self.ventanaEditar = Toplevel()
@@ -95,12 +82,7 @@ class Aplicacion(ttk.Frame):
         entradadni.pack()
         botonmodificar.pack()
         botoncancelar.pack()
-
         pass
-        #item = self.treeview.selection()[0]
-       # self.treeview.item(item, text=self.campo1.get())
-        #hijo = self.treeview.get_children(item)
-        #self.treeview.item(hijo, text=self.campo2.get())
 
     def crear(self):
         pass
